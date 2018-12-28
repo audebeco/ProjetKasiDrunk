@@ -1,5 +1,6 @@
 package com.example.caudeber.newyearapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,10 +37,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClick(View v){
         startActivity(RouletteActivity.getStartIntent(this));
+
+
+
     }
 
     private void onClickAdd(View v){
+
         listeJoueur.add(new Joueur(ajoutJoueur.getText().toString()));
+        ajoutJoueur.setText("");
+
     }
 
 }
