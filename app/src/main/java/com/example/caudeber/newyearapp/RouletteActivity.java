@@ -2,6 +2,7 @@ package com.example.caudeber.newyearapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,6 +40,8 @@ public class RouletteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_roulette);
         btn = (Button) findViewById(R.id.button);
+        btn.setBackgroundColor(Color.parseColor("#2B62FF"));
+
         TextView listePrenom = findViewById(R.id.listePrenom);
         TextView nbrgorgee = findViewById(R.id.gorgee);
         TextView param = findViewById(R.id.param);
@@ -55,7 +58,6 @@ public class RouletteActivity extends AppCompatActivity {
         Collections.shuffle(Listparam);
         Collections.shuffle(nombresgorgees);
         Collections.shuffle(joueurs);
-
 
         btn.setOnClickListener(new View.OnClickListener(){
             @Override

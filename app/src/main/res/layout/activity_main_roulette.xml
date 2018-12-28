@@ -4,48 +4,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/principal">
+
 
     <TextView
         android:id="@+id/listePrenom"
-        android:layout_width="380dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="321dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimary"
         android:gravity="center"
+
         android:text="Prenom"
         android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/param"
-        android:layout_width="380dp"
-        android:layout_height="135dp"
+        android:layout_width="327dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="288dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/bloc2"
         android:gravity="center"
         android:text="Pour qui ?"
         android:textSize="30sp"
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/gorgee"
-        android:layout_width="380dp"
-        android:layout_height="135dp"
+        android:layout_width="327dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="144dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/bloc3"
         android:gravity="center"
         android:text="Nombre de gorgée"
         android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="375dp"
+        android:layout_width="227dp"
         android:layout_height="76dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="GO"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/param" />
 
 
