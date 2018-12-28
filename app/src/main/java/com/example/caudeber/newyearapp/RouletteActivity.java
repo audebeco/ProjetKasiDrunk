@@ -7,12 +7,14 @@ import android.os.Bundle;
 
 public class RouletteActivity extends AppCompatActivity {
 
+
+    public static  Intent getStartIntent(final Context ctx){
+        return new Intent(ctx,RouletteActivity.class);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_roulette);
     }
-    public static  Intent getStartIntent(final Context ctx){
-        return new Intent(ctx,RouletteActivity.class);
-    }
+
 }
