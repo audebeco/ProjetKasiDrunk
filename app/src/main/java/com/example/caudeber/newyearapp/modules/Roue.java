@@ -1,12 +1,14 @@
 package com.example.caudeber.newyearapp.modules;
 
+import com.example.caudeber.newyearapp.MainActivity;
+
 public class Roue extends Thread {
 
-    interface WheelListener {
+    public interface WheelListener {
         void newImage(int img);
     }
 
-    private static int[] imgs = { };
+    private static int[] imgs = {0, 1, 2};
     public int currentIndex;
     private WheelListener wheelListener;
     private long frameDuration;
