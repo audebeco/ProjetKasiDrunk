@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.caudeber.newyearapp.modules.Joueur;
 import com.example.caudeber.newyearapp.modules.Roue;
 
 import java.lang.reflect.Array;
@@ -39,16 +40,16 @@ public class RouletteActivity extends AppCompatActivity {
         TextView listePrenom = findViewById(R.id.listePrenom);
         TextView nbrgorgee = findViewById(R.id.gorgee);
         TextView param = findViewById(R.id.param);
-
+        ArrayList<Joueur> joueurs = MainActivity.listeJoueur;
         ArrayList<Integer> nombresgorgees = new ArrayList<Integer>();
         for (int nbr = 0; nbr<6; nbr++)
         {
             nombresgorgees.add(nbr);
         }
         ArrayList<String> Listparam = new ArrayList<String>();
-        Listparam.add("+");
-        Listparam.add("-");
-        Listparam.add("=");
+        Listparam.add("Tu donnes une gorgée !");
+        Listparam.add("tu bois !");
+        Listparam.add("tu choisis un partenaire pour t'accompagner !");
 
 
 
@@ -60,7 +61,7 @@ public class RouletteActivity extends AppCompatActivity {
                     wheel2.stopWheel();
                     wheel3.stopWheel();
                     isStarted = false;
-
+                    btn.setText("Start");
                 } else {
 
                     wheel1 = new Roue(new Roue.WheelListener() {
@@ -69,11 +70,11 @@ public class RouletteActivity extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    listePrenom.setText(nombresgorgees.get(img).toString());
+                                    listePrenom.setText(joueurs.get(img).prenom);
                                 }
                             });
                         }
-                    }, 200, randomLong(0, 200));
+                    }, 200, randomLong(0, 200), joueurs.size());
 
                     wheel1.start();
 
@@ -87,7 +88,7 @@ public class RouletteActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                    }, 200, randomLong(150, 400));
+                    }, 200, randomLong(150, 400), 5);
 
                     wheel2.start();
 
@@ -101,9 +102,10 @@ public class RouletteActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                    }, 200, randomLong(150, 400));
+                    }, 200, randomLong(150, 400), 3);
 
                     wheel3.start();
+                    btn.setText("Stop");
                     isStarted = true;
                 }
             }
