@@ -47,9 +47,9 @@ public class RouletteActivity extends AppCompatActivity {
             nombresgorgees.add(nbr);
         }
         ArrayList<String> Listparam = new ArrayList<String>();
-        Listparam.add("+");
-        Listparam.add("-");
-        Listparam.add("=");
+        Listparam.add("Tu donnes une gorgée !");
+        Listparam.add("tu bois !");
+        Listparam.add("tu choisis un partenaire pour t'accompagner !");
 
 
 
@@ -61,7 +61,7 @@ public class RouletteActivity extends AppCompatActivity {
                     wheel2.stopWheel();
                     wheel3.stopWheel();
                     isStarted = false;
-
+                    btn.setText("Start");
                 } else {
 
                     wheel1 = new Roue(new Roue.WheelListener() {
@@ -74,7 +74,7 @@ public class RouletteActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                    }, 200, randomLong(0, 200));
+                    }, 200, randomLong(0, 200), joueurs.size());
 
                     wheel1.start();
 
@@ -88,7 +88,7 @@ public class RouletteActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                    }, 200, randomLong(150, 400));
+                    }, 200, randomLong(150, 400), 5);
 
                     wheel2.start();
 
@@ -102,9 +102,10 @@ public class RouletteActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                    }, 200, randomLong(150, 400));
+                    }, 200, randomLong(150, 400), 3);
 
                     wheel3.start();
+                    btn.setText("Stop");
                     isStarted = true;
                 }
             }
