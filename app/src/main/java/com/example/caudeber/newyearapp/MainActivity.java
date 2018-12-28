@@ -12,7 +12,7 @@ import com.example.caudeber.newyearapp.modules.Joueur;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    public ArrayList<Joueur> listeJoueur = new ArrayList<>();
+    public static ArrayList<Joueur> listeJoueur = new ArrayList<>();
     public ImageButton btAdd;
     public EditText ajoutJoueur;
     @Override
