@@ -13,6 +13,8 @@ import com.example.caudeber.newyearapp.modules.Roue;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class RouletteActivity extends AppCompatActivity {
@@ -50,12 +52,15 @@ public class RouletteActivity extends AppCompatActivity {
         Listparam.add("Tu donnes une gorgée !");
         Listparam.add("tu bois !");
         Listparam.add("tu choisis un partenaire pour t'accompagner !");
-
+        Collections.shuffle(Listparam);
+        Collections.shuffle(nombresgorgees);
+        Collections.shuffle(joueurs);
 
 
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+
                 if (isStarted) {
                     wheel1.stopWheel();
                     wheel2.stopWheel();
@@ -88,7 +93,7 @@ public class RouletteActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                    }, 200, randomLong(150, 400), 5);
+                    }, 200, randomLong(150, 400), nombresgorgees.size());
 
                     wheel2.start();
 
