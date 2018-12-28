@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.caudeber.newyearapp.modules.Joueur;
 import com.example.caudeber.newyearapp.modules.Roue;
 
 import java.lang.reflect.Array;
@@ -39,7 +40,7 @@ public class RouletteActivity extends AppCompatActivity {
         TextView listePrenom = findViewById(R.id.listePrenom);
         TextView nbrgorgee = findViewById(R.id.gorgee);
         TextView param = findViewById(R.id.param);
-
+        ArrayList<Joueur> joueurs = MainActivity.listeJoueur;
         ArrayList<Integer> nombresgorgees = new ArrayList<Integer>();
         for (int nbr = 0; nbr<6; nbr++)
         {
@@ -69,7 +70,7 @@ public class RouletteActivity extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    listePrenom.setText(nombresgorgees.get(img).toString());
+                                    listePrenom.setText(joueurs.get(img).prenom);
                                 }
                             });
                         }

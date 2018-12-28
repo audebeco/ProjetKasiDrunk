@@ -8,7 +8,7 @@ public class Roue extends Thread {
         void newImage(int img);
     }
 
-    private static int[] imgs = {0, 1, 2};
+    private static int[] imgs = {0, 1, 2,3,4,5,6,7,8};
     public int currentIndex;
     private WheelListener wheelListener;
     private long frameDuration;
